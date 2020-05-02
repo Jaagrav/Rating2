@@ -233,15 +233,15 @@
         console.log(x);
         var api =
           "https://www.omdbapi.com/?apikey=47d808d1&t={" + x + "}&plot=full";
-        document.querySelector(".d").style.height = window.innerHeight + "px";
+        document.querySelector(".d").style.height = screen.height + "px";
         $.getJSON(api, response);
         document.querySelector(".movieQuery").value = "";
       }
       setInterval(() => {
         document.querySelector(".movieQuery").style.width =
-          window.innerWidth - 100 + "px";
+          screen.width - 100 + "px";
         document.querySelector(".d").style.height =
-          window.innerHeight - window.scrollY / 7 + "px";
+            screen.height - window.scrollY / 7 + "px";
       }, 10);
       function response(data) {
         document.querySelector(".movie-year").innerHTML =
